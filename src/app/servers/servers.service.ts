@@ -9,6 +9,11 @@ export class ServersService {
             id: 2,
             name: 'TestServers',
             status: 'offline'
+        },
+        {
+            id: 3,
+            name: 'TestServers2',
+            status: 'offline'
         }
     ];
 
