@@ -1,3 +1,15 @@
-<p>
-  users works!
-</p>
+<div class="row">
+  <div class="col-4">
+    <a 
+      href="#"
+      class="list-group-item"
+      *ngFor="let user of users">
+      {{ user.name }}
+    </a>
+  </div>
+
+  <div class="col-8">
+    <app-user></app-user>
+  </div>
+
+</div>
