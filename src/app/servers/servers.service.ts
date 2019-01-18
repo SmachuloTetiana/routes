@@ -29,4 +29,8 @@ export class ServersService {
         );
         return server;
     }
+
+    addServers(id, name, status) {
+        this.servers.push(id, name, status);
+    }
 }

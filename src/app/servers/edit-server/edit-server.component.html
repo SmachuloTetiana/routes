@@ -1,3 +1,23 @@
 <p>
   edit-server works!
 </p>
+
+<form action="">
+  <input type="number" [(ngModel)]="id" name="id" placeholder="Id">
+  <input type="text" [(ngModel)]="name" name="name" placeholder="Name">
+  <input type="text" [(ngModel)]="status" name="status" placeholder="Status">
+  <button bold (click)="addItem(id, name, status)">Add Item</button>
+</form>
+
+<ul>
+  <li
+    [routerLink]="['/servers', item.id, item.status]" 
+    [queryParams]="{allowEdit: '1'}"
+    fragment="loading"
+    *ngFor="let item of items; let i = index">
+    {{ i }}
+    {{ item.id }}
+    {{ item.name }}
+    {{ item.status }}
+  </li>
+</ul>
