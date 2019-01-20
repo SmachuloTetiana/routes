@@ -1,5 +1,11 @@
+interface Server {
+    id: number;
+    name: string;
+    status: string;
+}
+
 export class ServersService {
-    private servers = [
+    private servers: Server[] = [
         {
             id: 1,
             name: 'Test',
@@ -30,7 +36,7 @@ export class ServersService {
         return server;
     }
 
-    addServers(id, name, status) {
-        this.servers.push(id, name, status);
+    addServers(server: Server) {
+        this.servers.push(server);
     }
 }

@@ -13,12 +13,17 @@ export class EditServerComponent implements OnInit {
 
   constructor(private serversService: ServersService) { }
 
-  addItem(id, name, status) {
-   this.serversService.addServers(id, name, status);
-  }
-
   ngOnInit() {
     this.items = this.serversService.getServers();
   }
 
+  addItem(id: number, name: string, status: string) {
+    this.serversService.addServers({
+      id,
+      name,
+      status
+    });
+  }
+
+  removeItem(index: number): void {}
 }
