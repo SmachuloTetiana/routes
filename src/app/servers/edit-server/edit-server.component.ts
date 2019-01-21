@@ -25,5 +25,8 @@ export class EditServerComponent implements OnInit {
     });
   }
 
-  removeItem(index: number): void {}
+  removeItem(index: number): void {
+    this.items.splice(index, 1);
+    console.log(index);
+  }
 }
