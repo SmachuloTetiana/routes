@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userData">
+          <label for="name">Username</label>
+          <input 
+            type="text"
+            class="form-control"
+            formControlName="name"
+            id="name">
+            <p 
+              *ngIf="!signupForm.get('userData.name').valid && signupForm.get('userData.name').touched"
+              class="help-block">Enter a valid name!</p>
+            <label for="email">Email</label>
+            <input 
+              type="email"
+              class="form-control"
+              formControlName="email"
+              id="email">
+              <p 
+                *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched"
+                class="help-block">Enter a valid email!</p>
+        </div>     
+
+        <div class="radio" *ngFor="let gender of genders">
+            <label>              
+              <input 
+                type="radio"
+                formControlName="gender"
+                [value]="gender">{{ gender }}
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

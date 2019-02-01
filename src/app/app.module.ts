@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { UserComponent } from './users/user/user.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ServersService } from './servers/servers.service';
 import { BoldDirective } from './servers/edit-server/bold.directive';
+import { ControlFormComponent } from './control-form/control-form.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,11 +33,13 @@ const appRoutes: Routes = [
     EditServerComponent,
     ServerComponent,
     UserComponent,
-    BoldDirective
+    BoldDirective,
+    ControlFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ServersService],
